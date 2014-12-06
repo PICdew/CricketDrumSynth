@@ -1,0 +1,73 @@
+***PIC
+name	function			      pin		add'l           wired
+	
+A0		CMOS switch in			2		  A/D (AN0)       X	
+A1		joystick enable		  3		  	              X
+A2		osc waveform 2      9		                  X
+A3		osc waveform 1      10		                X
+A4		osc 1/osc 2 select  12		                X
+
+B0		front pot left      4		  ICSP, A/D (AN2) X     
+B1		front pot right     5     ICSP, A/D (AN3) X     
+B2		switch select A			6                     X
+B3		audio in            7		  A/D (AN5)       X
+B4		shift reg clk		    11                    X
+B5		switch select B			14                    X
+B6		switch select C			15                    X
+B7		trigger switch      16		INT             X
+B8		LED out (reg data)  17	  PWM2            X
+B9		speaker out			    18		PWM2            X
+B10		mini toggle switch  21		change          X
+B11		toggle right        22		change          X       
+B12		toggle left 	      23		change          X
+B13		toggle center       24		change          X
+B14		MIDI in    			    25		change          X
+B15		black switch		    26		change          X
+
+***controls - current							
+0		cutoff
+1		osc 1 pitch
+2		osc 2 pitch
+3		env decay
+4		osc 2 high/low range
+5		osc 1/2 mix
+6		FM depth osc 2 -> osc 1 
+7		resonance
+
+***shift reg
+0/A     pod 3 yel
+1/B     pod 3 blue   
+2/C     pod 2    
+3/D     pod 2
+4/E     pod 1
+5/F     pod 1    
+6/G     face LEDs
+7/H		  purr motors
+
+***control assignments
+
+LEFT
+blk_up            attack
+blk_down          osc1 pitch 
+silver            scale (wrapping) 
+white             osc2 pitch
+
+RIGHT
+blk_up            release
+blk_down          AND/OR/XOR
+silver            osc1/osc2 mix
+yellow            osc2 -> osc1 mod depth
+
+FRONT
+switch_blk        light chase direction
+switch_minitog    osc2 range (hi/lo)
+switch_L          LFO waveform 1
+switch_C          LFO waveform 2
+switch_R          logic on/off
+left              LFO depth 
+right             LFO speed
+
+***possible future work
+new osc mode (use light dir switch): both oscs slaved to osc2 pitch, osc1 pitch ctrl sets detune amt
+wire input jack parallel to trigger switch for footswitch ctrl
+add clipping amp to input jack to trigger w/ click snd from external device
